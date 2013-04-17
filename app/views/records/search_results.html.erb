@@ -1,0 +1,7 @@
+<% begin %>
+  <% @record.each do |record| %>
+    <%= record.name %>
+  <% end %>
+<% rescue %>
+    <p>No records were found.</p>
+<% end %>
