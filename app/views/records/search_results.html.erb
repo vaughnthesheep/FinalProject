@@ -1,7 +1,5 @@
-<% begin %>
-  <% @record.each do |record| %>
-    <%= record.name %>
-  <% end %>
-<% rescue %>
-    <p>No records were found.</p>
+
+<% @records.each do |record| %>
+  <p><%= link_to(record.name, "records/#{record.id}") %></p>
 <% end %>
+<p><%= @safety %></p>

@@ -1,13 +1,13 @@
 
 <% @artists.each do |artist| %>
-
+    <div class="artist">
     <h1><%= artist.name %></h1>
     <div class="band">
       <%= image_tag "artists/#{artist.image}", :class => "bandimg" %>
     </div>
     <p><%= artist.bio %></p>
     <%= link_to 'View Records', "/artists/#{artist.id}" %>
-    
+    </div>
 <% end %>
 
 <br />

@@ -300,6 +300,19 @@ body
 	margin-bottom: 100px;
 }
 
+.artist p
+{
+	position: relative;
+	top: -50px;
+}
+.artist a
+{
+	position: relative;
+	left: 50px;
+	top: -80px;
+	color: rgb(50,50,100);
+}
+
 .albumart
 {
 	width: 200px;
@@ -323,10 +336,24 @@ body
 {
 	position: absolute;
 	z-index: 4;
-	right: 0;
-	top: 0;
+	right: 10px;
+	top: 40px;
+	font-family: "Oswald";
+	font-weight: 100;
+	text-transform: uppercase;
+	color: rgb(100,100,100);
 }
-
+.login
+{
+	position: absolute;
+	z-index: 4;
+	right: 10px;
+	top: 10px;
+	font-family: "Oswald";
+	font-weight: 100;
+	text-transform: uppercase;
+	color: rgb(100,100,100);
+}
 
 
 

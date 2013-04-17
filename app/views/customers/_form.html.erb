@@ -20,8 +20,8 @@
     <%= f.text_field :last_name %>
   </div>
   <div class="field">
-    <%= f.label :province_id %><br />
-    <%= f.number_field :province_id %>
+    <%= f.label :province %><br />
+    <%= f.collection_select(:province_id, Province.all, :id, :name ) %>
   </div>
   <div class="field">
     <%= f.label :city %><br />

@@ -11,19 +11,19 @@ FinalProject::Application.routes.draw do
   match "/records" => "records#index"
   match "/records/:id" => "records#show"
   match "/search_results" => "records#search_results"
+  match "/register" => "customers#new"
+  match "/login_form" => "customers#login_form"
+  match "/login" => "customers#login"
+  match "/logout" => "customers#logout"
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   
   resources :cart_items
-
+  resources :customers
   resources :line_items
 
   resources :orders
-
-  resources :customers
-
-  resources :provinces
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

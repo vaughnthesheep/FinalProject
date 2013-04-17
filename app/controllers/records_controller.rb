@@ -24,7 +24,11 @@ class RecordsController < ApplicationController
   def search_results
     keywords = params[:keywords]
     @records = Record.where("name LIKE '%#{keywords}%'")
-    
+    if @records.empty?
+      @safety = "No records found."
+    else
+      @safety = ""
+    end
     respond_to do |format|
       format.html # search_results.html.erb
       format.json { render json: @records }
