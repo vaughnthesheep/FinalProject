@@ -1,0 +1,329 @@
+body
+{
+	background: url('debut_light.png');
+}
+
+@font-face
+{
+	font-family: "Neou";
+	src: 	url('Neou/Neou-Thin.ttf'),
+			url('Neou/Neou-Thin.eot'),
+			url('Neou/Neou-Bold.ttf'),
+			url('Neou/Neou-Bold.eot');
+}
+
+@font-face
+{
+	font-family: "Oswald";
+	src: 	url('Oswald/Oswald-Thin.ttf'),
+			url('Oswald/Oswald-Regular.ttf'),
+			url('Oswald/Oswald-Bold.ttf');
+}
+
+@font-face
+{
+	font-family: "OpenSans";
+	src: 	url('Open_Sans/OpenSans-Regular.ttf'),
+			url('Open_Sans/OpenSans-Italic.ttf');
+}
+
+@font-face
+{
+	font-family: "OpenSansLight";
+	src: 	url('Open_Sans/OpenSans-Light.ttf'),
+			url('Open_Sans/OpenSans-LightItalic.ttf');
+}
+
+@font-face
+{
+	font-family: "OpenSansBold";
+	src: 	url('Open_Sans/OpenSans-Bold.ttf'),
+			url('Open_Sans/OpenSans-BoldItalic.ttf');
+}
+
+@font-face
+{
+	font-family: "OpenSansExtra";
+	src: 	url('Open_Sans/OpenSans-ExtraBold.ttf'),
+			url('Open_Sans/OpenSans-ExtraBoldItalic.ttf');
+}
+
+@font-face
+{
+	font-family: "OpenSansSemi";
+	src: 	url('Open_Sans/OpenSans-Semibold.ttf'),
+			url('Open_Sans/OpenSans-SemiboldItalic.ttf');
+}
+
+#wrapper
+{
+	width: 100%;
+	margin: 0 auto;
+	bottom: 0;
+}
+
+#head
+{
+	background: url('texturetastic_gray.png');
+	top: 0px;
+	left: 0px;
+	height: 200px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+	box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.75);
+	z-index: 1;
+	position: absolute;
+	overflow: hidden;
+}
+
+#logo
+{
+	position: absolute;
+	left: 50%;
+	margin-left: -200px;
+	width: 100px;
+	top: 15px;
+}
+
+#name
+{
+	position: absolute;
+	width: 300px;
+	left: 50%;
+	margin-left: -100px;
+	top: 27px;
+}
+
+#headrule
+{
+	position: relative;
+	width: auto;
+	margin-left: 50px;
+	margin-right: 50px;
+	top: 130px;
+	border-bottom: 1px solid white;
+}
+
+#headnav
+{
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	left: 50%;
+	margin-left: -52%;
+	z-index: 2;
+	width: 100%;
+	top: 140px;
+	text-align: center;
+}
+
+#headnav ul
+{
+	text-align: center;
+	position: relative;
+	top: -5px;
+}
+
+#headnav ul li
+{
+	display: inline;
+	list-style-type: none;
+	padding: 0;
+	margin-left: 4%;
+	margin-right: 4%;
+}
+
+#headnav a
+{
+	padding: 7px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	margin: 0 auto;
+	height: 40px;
+	-webkit-transition: background-color 0.7s linear;
+	-moz-transition: background-color 0.7s linear;
+	-o-transition: background-color 0.7s linear;
+	transition: background-color 0.7s linear;
+	font-family: "Oswald";
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 18pt;
+	color: rgb(75,75,75);
+	text-shadow: 0px 1px 0px white;
+	font-family: "Oswald";
+	font-weight: 100;
+}
+
+#headnav a:hover
+{
+	background-color: rgba(0,0,0,0.1);
+}
+
+#right
+{
+	position: absolute;
+	right: 50px;
+	margin-right: 0;
+	top: 230px;
+	width: 250px;
+	bottom: 0;
+}
+#tracks, #tours, #contact
+{
+	width: 100%;
+}
+
+#tracks
+{
+	padding-bottom: 25px;
+	margin-bottom: 25px;
+	border-bottom: 1px solid rgba(100,100,100,0.5);
+	box-shadow: 0px 1px 0px white;
+}
+
+
+#buttonnav
+{
+	width: 100%;
+	padding: 0;
+	margin-top: 25px;
+}
+
+#buttonnav li
+{
+	display: inline;
+	list-style-type: none;
+	margin: 20px;
+}
+
+#buttonnav li:first-of-type
+{
+	margin-left: 40px;
+}
+
+#buttonnav li a
+{
+	height: 30px;
+	width: 30px;
+}
+
+#buttonnav li a img
+{
+	opacity: 0.75;
+}
+
+#buttonnav li a img:hover
+{
+	background: white;
+	opacity: 1;
+}
+
+
+
+#content
+{
+	position: absolute;
+	right: 300px;
+	top: 220px;
+	margin-right: 50px;
+	padding-right: 50px;
+	left:0;
+	width: auto;
+	border-right: 1px solid white;
+	box-shadow: 1px 0px 0px rgba(100,100,100,0.5);
+	margin-top: -20px;
+	padding-top: 30px;
+	margin-left: 50px;
+	font-family: "OpenSans";
+	font-weight: bold;
+	color: rgba(0,0,0,0.7);
+	text-shadow: 0px 1px 0px white;
+	
+}
+
+#content h1
+{
+	background: url('texturetastic_gray.png');
+	margin: 0;
+	padding: 25px;
+	font-size: 20pt;
+	font-family: "Oswald";
+	font-weight: 100;
+	text-transform: uppercase;
+	z-index: 1;
+}
+
+#right h1
+{
+	text-shadow: 0px 1px 0px white;
+	background: url('texturetastic_gray.png');
+	margin: 0;
+	padding: 15px;
+	font-size: 18pt;
+	font-family: "Neou";
+	color: rgba(0,0,0,0.7);
+	font-family: "Oswald";
+	font-weight: 100;
+}
+
+#content p
+{
+	font-family: "OpenSans";
+	font-weight: normal;
+	margin-left: 50px;
+	margin-top: 25px;
+	margin-bottom: 50px;
+}
+
+
+#spacer
+{
+	padding-bottom: 100px;
+}
+
+.bandimg
+{
+	opacity: 0.3;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.band
+{
+	height: 90px;
+	width: 100%;
+	overflow: hidden;
+	margin-top: -90px;
+	z-index: -1;
+	margin-bottom: 100px;
+}
+
+.albumart
+{
+	width: 200px;
+	position: relative;
+	left: 100px;
+}
+
+.details
+{
+	position: relative;
+	margin-left: 100px;
+	color: rgb(150, 150, 200);
+}
+
+.record
+{
+	margin-bottom: 100px;
+}
+
+
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+        #spacer{
+            padding-bottom: 50px;
+        }
+    }

@@ -1,4 +1,16 @@
 FinalProject::Application.routes.draw do
+  
+  resources :artists
+
+  root :to => "artists#index"
+  
+  match "/artists" => "artists#index"
+  match "/artists/:id" => "artists#show"
+  match "/contact" => "contacts#index"
+  
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   resources :contacts
 
   resources :abouts

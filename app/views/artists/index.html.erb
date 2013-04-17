@@ -1,0 +1,13 @@
+
+<% @artists.each do |artist| %>
+
+    <h1><%= artist.name %></h1>
+    <div class="band">
+      <%= image_tag "artists/#{artist.image}", :class => "bandimg" %>
+    </div>
+    <p><%= artist.bio %></p>
+    <%= link_to 'Show', "/artists/#{artist.id}" %>
+
+<% end %>
+
+<br />

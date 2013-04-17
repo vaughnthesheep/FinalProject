@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FinalProject</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <title>Project</title>
+  <%= stylesheet_link_tag    "styles.css", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header id="head">
+    <%= image_tag "grey.png", :id => "logo", :alt => "logo" %>
+    <%= image_tag "engraved.png", :id => "name", :alt => "boranarecords" %>
+    <hr id="headrule" />
+    <nav id="headnav">
+      <ul>
+	<li><%= link_to "HOME", "/" %></li>
+	<li><%= link_to "ARTISTS", "/artists" %></li>
+	<li><%= link_to "RECORDS", "/records" %></li>
+	<li><%= link_to "ABOUT", "/about" %></li>
+	<li><%= link_to "CONTACT", "/contact" %></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="right">
+    
+    <div id="tracks">
+      <h1>PLAYLIST</h1>
+      <iframe width="100%" height="65" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1771151&amp;color=a4a4a4&amp;auto_play=false&amp;show_artwork=false"></iframe>
+    </div>
+    
+    <div id="contact">
+	<h1>FIND US</h1>
+	<nav id="buttons">
+	  <ul id="buttonnav">
+	    <li><%= link_to(image_tag("buttons/fb.png", :alt => "facebook"), "http://www.facebook.com") %></li>
+	    <li><%= link_to(image_tag("buttons/tw.png", :alt => "twitter"), "http://www.twitter.com") %></li>
+	    <li><%= link_to(image_tag("buttons/sc.png", :alt => "soundcloud"), "http://www.soundcloud.com") %></li>
+	  </ul>
+	</nav>
+    </div>
+    
+  </div>
+  <div id="content">
 
 <%= yield %>
+
+  </div>
 
 </body>
 </html>

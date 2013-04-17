@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+
+    <h1><%= @artist.name %></h1>
+    <div class="band">
+      <%= image_tag "artists/#{@artist.image}", :class => "bandimg" %>
+    </div>
+    <p><%= @artist.bio %></p>
+    
+    <% @records.each do |record| %>
+      <div class="record">
+        <p><b><%= record.name %></b></p>
+        <%= image_tag("records/#{record.image}", :class => "albumart") %>
+        <%= link_to 'Details', record, :class => "details" %>
+      </div>
+    <% end %>

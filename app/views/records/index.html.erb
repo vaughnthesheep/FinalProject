@@ -1,29 +1,10 @@
 <h1>Listing records</h1>
 
-<table>
-  <tr>
-    <th>Artist</th>
-    <th>Name</th>
-    <th>Image</th>
-    <th>Price</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @records.each do |record| %>
-  <tr>
-    <td><%= record.artist_id %></td>
-    <td><%= record.name %></td>
-    <td><%= record.image %></td>
-    <td><%= record.price %></td>
-    <td><%= link_to 'Show', record %></td>
-    <td><%= link_to 'Edit', edit_record_path(record) %></td>
-    <td><%= link_to 'Destroy', record, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <div class="record">
+    <p><b><%= record.name %></b>  -  <%= Artist.where("id = #{record.artist_id}").first.name %></p>
+    <%= image_tag("records/#{record.image}", :class => "albumart") %>
+    <%= link_to 'Details', record, :class => "details" %>
+    </div>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Record', new_record_path %>
