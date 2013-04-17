@@ -8,13 +8,14 @@ FinalProject::Application.routes.draw do
   match "/artists/:id" => "artists#show"
   match "/contact" => "contacts#index"
   match "/about" => "abouts#index"
+  match "/records" => "records#index"
+  match "/records/:id" => "records#show"
+  match "/search_results" => "records#search_results"
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   
   resources :cart_items
-
-  resources :records
 
   resources :line_items
 

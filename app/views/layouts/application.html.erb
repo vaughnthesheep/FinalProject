@@ -45,6 +45,13 @@
 <%= yield %>
 
   </div>
+  <div class="search">
+    <%= form_tag(search_results_path) do %>
+      <%= label_tag(:keywords, "Search for:") %>
+      <%= text_field_tag(:keywords) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+  </div>
 
 </body>
 </html>
