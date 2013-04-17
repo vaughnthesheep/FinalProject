@@ -69,7 +69,7 @@ class OrdersController < ApplicationController
       @line_item.quantity = @quantity
       @line_item.order_id = @order.id
       @price = Record.where("id = #{@record_id}").first.price
-      @sub = @price * @quantity
+      @sub = @price.to_f * @quantity.to_f
       @cust = Customer.where("id = #{session[:user_id]}").first
       @pstrate = Province.where("id = #{@cust.id}").first.pst
       @gstrate = Province.where("id = #{@cust.id}").first.gst
