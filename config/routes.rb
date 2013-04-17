@@ -15,6 +15,8 @@ FinalProject::Application.routes.draw do
   match "/login_form" => "customers#login_form"
   match "/login" => "customers#login"
   match "/logout" => "customers#logout"
+  match "/buy_now" => "orders#buy_now"
+  match "/checkout_one" => "orders#checkout_one"
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

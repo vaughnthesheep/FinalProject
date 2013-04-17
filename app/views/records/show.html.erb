@@ -1,25 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Artist:</b>
-  <%= @record.artist_id %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @record.name %>
-</p>
-
-<p>
-  <b>Image:</b>
-  <%= @record.image %>
-</p>
-
-<p>
-  <b>Price:</b>
-  <%= @record.price %>
-</p>
-
-
-<%= link_to 'Edit', edit_record_path(@record) %> |
-<%= link_to 'Back', records_path %>
+<div class="record">
+  <p><b><%= @record.name %></b> - <%= Artist.where("id = #{@record.artist_id}").first.name %></p>
+  <p>$<%= @record.price %></p>
+  <%= image_tag("records/#{@record.image}", :class => "albumart") %>
+</div>
+<% if session[:user_id] %>
+  <%= link_to "Buy Now", {:controller => "orders", :action => "buy_now", :record => @record.id }%>
+<% else %>
+  <%= link_to "Buy Now", {:controller => "customers", :action => "login_form" }%>
+<% end %>

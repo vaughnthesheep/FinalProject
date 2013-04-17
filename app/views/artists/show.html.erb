@@ -10,6 +10,6 @@
       <div class="record">
         <p><b><%= record.name %></b></p>
         <%= image_tag("records/#{record.image}", :class => "albumart") %>
-        <%= link_to 'Details', record, :class => "details" %>
+        <%= link_to 'Details', "/records/#{record.id}", :class => "details" %>
       </div>
     <% end %>

@@ -32,10 +32,6 @@ class OrdersController < ApplicationController
     end
   end
 
-  # GET /orders/1/edit
-  def edit
-    @order = Order.find(params[:id])
-  end
 
   # POST /orders
   # POST /orders.json
@@ -52,32 +48,55 @@ class OrdersController < ApplicationController
       end
     end
   end
-
-  # PUT /orders/1
-  # PUT /orders/1.json
-  def update
-    @order = Order.find(params[:id])
-
+  
+  def buy_now
+    @record = Record.where("id = #{params[:record]}").first
     respond_to do |format|
-      if @order.update_attributes(params[:order])
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
-        format.json { head :no_content }
+      format.html # buy_now.html.erb
+      format.json { render json: @order }
+    end
+  end
+  
+  def checkout_one
+    @record_id = params[:record_id]
+    @quantity = params[:quantity]
+    @order = Order.new
+    @order.status = "checked out"
+    @order.customer_id = session[:user_id]
+    if @order.save
+      @line_item = LineItem.new
+      @line_item.record_id = @record_id
+      @line_item.quantity = @quantity
+      @line_item.order_id = @order.id
+      @price = Record.where("id = #{@record_id}").first.price
+      @sub = @price * @quantity
+      @cust = Customer.where("id = #{session[:user_id]}").first
+      @pstrate = Province.where("id = #{@cust.id}").first.pst
+      @gstrate = Province.where("id = #{@cust.id}").first.gst
+      @hstrate = Province.where("id = #{@cust.id}").first.hst
+      @tax = (@sub * @pstrate) + (@sub * @gstrate) + (@sub * @hstrate)
+      if @line_item.save
+        respond_to do |format|
+          format.html
+          format.json { render json: @order }
+        end
       else
-        format.html { render action: "edit" }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
+        respond_to do |format|
+          flash[:warning] = "LineItem save failed."
+          format.html { redirect_to root_path}
+          format.json { render json: @order }
+        end
+      end
+    else
+      respond_to do |format|
+        flash[:warning] = "Order save failed."
+        format.html { redirect_to root_path}
+        format.json { render json: @order }
       end
     end
+    
+    
   end
 
-  # DELETE /orders/1
-  # DELETE /orders/1.json
-  def destroy
-    @order = Order.find(params[:id])
-    @order.destroy
-
-    respond_to do |format|
-      format.html { redirect_to orders_url }
-      format.json { head :no_content }
-    end
-  end
+  
 end

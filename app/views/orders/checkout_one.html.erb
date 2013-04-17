@@ -1,0 +1,9 @@
+<h1>ORDER SUMMARY</h1>
+
+<p>Name: <%= Customer.where("id = #{session[:user_id]}").first.first_name %> <%= Customer.where("id = #{session[:user_id]}").first.last_name %></p>
+<p>Record: <%= Record.where("id = #{@record_id}").first.name %></p>
+<p>Quantity: <%= @quantity %></p>
+
+<p>Subtotal: $<%= @sub %></p>
+<p>Taxes: $<%= @tax %></p>
+<p>Total: $<%= @sub + @tax %></p>

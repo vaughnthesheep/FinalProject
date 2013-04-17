@@ -1,0 +1,10 @@
+<h1>BUY <%=@record.name%> NOW</h1>
+
+<%= form_tag("/checkout_one") do %>
+
+<%= label_tag(:quantity, "Quantity:") %>
+<%= number_field_tag(:quantity, :nil, :in => 1...10) %>
+<%= hidden_field_tag "record_id", @record.id %>
+<%= submit_tag "Purchase" %>
+
+<% end %>

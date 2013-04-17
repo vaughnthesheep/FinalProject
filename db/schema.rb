@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130417065155) do
+ActiveRecord::Schema.define(:version => 20130417162653) do
 
   create_table "abouts", :force => true do |t|
     t.text     "content"
@@ -120,9 +120,9 @@ ActiveRecord::Schema.define(:version => 20130417065155) do
     t.integer  "artist_id"
     t.string   "name"
     t.string   "image"
-    t.decimal  "price"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.decimal  "price",      :precision => 10, :scale => 2
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
 end
